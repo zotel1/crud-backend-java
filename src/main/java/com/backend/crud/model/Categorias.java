@@ -11,12 +11,12 @@ public class Categorias {
     private Long categoria_id;
 
     @Column(nullable = false)
-    private String categoria_nombre;
+    private String nombre;
 
     public Categorias() {}
 
-    public Categorias(String categoria_nombre) {
-        this.categoria_nombre = categoria_nombre;
+    public Categorias(String nombre) {
+        this.nombre = nombre;
     }
 
     public Long getCategoria_id() {
@@ -27,11 +27,11 @@ public class Categorias {
         this.categoria_id = categoria_id;
     }
 
-    public String getCategoria_nombre() {
-        return categoria_nombre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCategoria_nombre(String categoria_nombre) {
-        this.categoria_nombre = categoria_nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
