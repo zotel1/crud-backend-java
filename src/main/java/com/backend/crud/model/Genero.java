@@ -2,36 +2,50 @@ package com.backend.crud.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "generos")
 public class Genero {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long generos_id;
+    private Long id;
 
     @Column(nullable = false)
-    private String generos_nombre;
+    private String nombre;
+
+    @ManyToMany(mappedBy = "generos")
+    private List<Contenido> contenidos = new ArrayList<>();
 
     public Genero() {}
 
-    public Genero(String generos_nombre) {
-        this.generos_nombre = generos_nombre;
+    public Genero(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Long getGeneros_id() {
-        return generos_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setGeneros_id(Long generos_id) {
-        this.generos_id = generos_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getGeneros_nombre() {
-        return generos_nombre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setGeneros_nombre(String generos_nombre) {
-        this.generos_nombre = generos_nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public List<Contenido> getContenidos() {
+        return contenidos;
+    }
+
+    public void setContenidos(List<Contenido> contenidos) {
+        this.contenidos = contenidos;
     }
 }
