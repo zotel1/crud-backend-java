@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1/auth")
-@Tag(na)
+@Tag()
 public class AuthController {
 }
