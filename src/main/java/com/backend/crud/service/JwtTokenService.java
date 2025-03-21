@@ -12,5 +12,5 @@ public class JwtTokenService {
     private static final long ACCESS_TOKEN_VALIDITY = 1000 * 60 * 15; // 15 minutos
     private static final long REFRESH_TOKEN_VALIDITY = 1000 * 60 * 60 * 24; // 24 horas
 
-    public String generateToken(UserDetails)
+ //   public String generateToken(UserDetails)
 }
