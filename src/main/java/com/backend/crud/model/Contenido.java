@@ -47,7 +47,7 @@ public class Contenido {
             inverseJoinColumns = @JoinColumn(name = "actores_id")
     )
 
-    private List<Actor> actores = new ArrayList<>();
+    private List<ActorModel> actores = new ArrayList<>();
 
     // Constructor vacío (necesario para JPA)
     public Contenido() {}
@@ -127,11 +127,11 @@ public class Contenido {
         this.generos = generos;
     }
 
-    public List<Actor> getActores() {
+    public List<ActorModel> getActores() {
         return actores;
     }
 
-    public void setActores(List<Actor> actores) {
+    public void setActores(List<ActorModel> actores) {
         this.actores = actores;
     }
 }

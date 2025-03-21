@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "actores")
-public class Actor {
+public class ActorModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +19,9 @@ public class Actor {
     @ManyToMany(mappedBy = "actores")
     private List<Contenido> contenidos = new ArrayList<>();
 
-    public Actor() {}
+    public ActorModel() {}
 
-    public Actor(String nombre){
+    public ActorModel(String nombre){
         this.nombre = nombre;
     }
 
