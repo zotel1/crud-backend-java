@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "categorias")
-public class Categoria {
+public class CategoriaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,9 +13,9 @@ public class Categoria {
     @Column(nullable = false)
     private String nombre;
 
-    public Categoria() {}
+    public CategoriaModel() {}
 
-    public Categoria(String nombre) {
+    public CategoriaModel(String nombre) {
         this.nombre = nombre;
     }
 

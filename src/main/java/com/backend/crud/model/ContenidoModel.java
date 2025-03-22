@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity // Indicamos que esta clase representa una tabla en la base de datos
 @Table(name = "contenido") // Nombre de la tabla
-public class Contenido {
+public class ContenidoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Autroincremental
@@ -27,7 +27,7 @@ public class Contenido {
     // Relación con Categoría (ManyToOne)
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
+    private CategoriaModel categoria;
 
     // Relación con Generos (ManyToMany)
     @ManyToMany
@@ -37,7 +37,7 @@ public class Contenido {
             inverseJoinColumns = @JoinColumn(name = "genero_id")
     )
 
-    private List<Genero> generos = new ArrayList<>();
+    private List<GeneroModel> generos = new ArrayList<>();
 
     // Relación con Actores (ManyToMany)
     @ManyToMany
@@ -50,10 +50,10 @@ public class Contenido {
     private List<ActorModel> actores = new ArrayList<>();
 
     // Constructor vacío (necesario para JPA)
-    public Contenido() {}
+    public ContenidoModel() {}
 
     // Constructor con parámetros
-    public Contenido(String titulo, String resumen, int temporadas, String poster, String trailer, Categoria categoria) {
+    public ContenidoModel(String titulo, String resumen, int temporadas, String poster, String trailer, CategoriaModel categoria) {
         this.titulo = titulo;
         this.resumen = resumen;
         this.temporadas = temporadas;
@@ -111,19 +111,19 @@ public class Contenido {
         this.trailer = trailer;
     }
 
-    public Categoria getCategoria() {
+    public CategoriaModel getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(CategoriaModel categoria) {
         this.categoria = categoria;
     }
 
-    public List<Genero> getGeneros() {
+    public List<GeneroModel> getGeneros() {
         return generos;
     }
 
-    public void setGeneros(List<Genero> generos) {
+    public void setGeneros(List<GeneroModel> generos) {
         this.generos = generos;
     }
 

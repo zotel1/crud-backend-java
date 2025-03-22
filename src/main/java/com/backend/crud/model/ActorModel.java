@@ -17,7 +17,7 @@ public class ActorModel {
     private String nombre;
 
     @ManyToMany(mappedBy = "actores")
-    private List<Contenido> contenidos = new ArrayList<>();
+    private List<ContenidoModel> contenidos = new ArrayList<>();
 
     public ActorModel() {}
 
@@ -41,11 +41,11 @@ public class ActorModel {
         this.nombre = nombre;
     }
 
-    public List<Contenido> getContenidos() {
+    public List<ContenidoModel> getContenidos() {
         return contenidos;
     }
 
-    public void setContenidos(List<Contenido> contenidos) {
+    public void setContenidos(List<ContenidoModel> contenidos) {
         this.contenidos = contenidos;
     }
 }

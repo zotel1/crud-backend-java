@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "generos")
-public class Genero {
+public class GeneroModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,11 +17,11 @@ public class Genero {
     private String nombre;
 
     @ManyToMany(mappedBy = "generos")
-    private List<Contenido> contenidos = new ArrayList<>();
+    private List<ContenidoModel> contenidos = new ArrayList<>();
 
-    public Genero() {}
+    public GeneroModel() {}
 
-    public Genero(String nombre) {
+    public GeneroModel(String nombre) {
         this.nombre = nombre;
     }
 
@@ -41,11 +41,11 @@ public class Genero {
         this.nombre = nombre;
     }
 
-    public List<Contenido> getContenidos() {
+    public List<ContenidoModel> getContenidos() {
         return contenidos;
     }
 
-    public void setContenidos(List<Contenido> contenidos) {
+    public void setContenidos(List<ContenidoModel> contenidos) {
         this.contenidos = contenidos;
     }
 }

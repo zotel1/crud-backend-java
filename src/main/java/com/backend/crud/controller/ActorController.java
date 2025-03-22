@@ -1,5 +1,7 @@
 package com.backend.crud.controller;
 
+import com.backend.crud.dto.ActorDto;
+import com.backend.crud.service.ActorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "contenido_actores")
-public class ContenidoActores {
+public class ContenidoActoresModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,9 +14,9 @@ public class ContenidoActores {
 
     private int actores_id;
 
-    public ContenidoActores() {}
+    public ContenidoActoresModel() {}
 
-    public ContenidoActores(int contenido_id, int actores_id) {
+    public ContenidoActoresModel(int contenido_id, int actores_id) {
         this.contenido_id = contenido_id;
         this.actores_id = actores_id;
     }
