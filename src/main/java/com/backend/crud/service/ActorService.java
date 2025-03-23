@@ -18,7 +18,11 @@ public class ActorService {
         this.actorRepository = actorRepository;
     }
 
-    public List<ActorModel> obtenerTodos(){
+    public List<ActorModel> obtenerActores(){
         return actorRepository.findAll();
+    }
+
+    public List<ActorModel> buscarActorNombre(String nombre){
+        return actorRepository.findByNombreContainingIgnoreCase(nombre);
     }
 }
