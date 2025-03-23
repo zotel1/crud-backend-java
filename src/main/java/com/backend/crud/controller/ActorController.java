@@ -1,6 +1,7 @@
 package com.backend.crud.controller;
 
 import com.backend.crud.dto.ActorDto;
+import com.backend.crud.model.ActorModel;
 import com.backend.crud.service.ActorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,13 +22,14 @@ public class ActorController {
         this.actorService = actorService;
     }
 
+    // Obtenemos todos los actores
     @GetMapping
-    public ResponseEntity<List<ActorDto>> getAllActores() {
-        try {
-            List<ActorDto> actores = actorService.getAllActores();
-            return ResponseEntity.ok(actores);
-        } catch (Exception e) {
-            return ResponseEntity.status(500).build();
+    public ResponseEntity<?> obtenerActores() {
+        List<ActorModel> actores = actorService.obtenerActores();
+        if (actores.isEmpty()) {
+            return ResponseEntity.status(404).body("No hay actores registrados.");
         }
+        return ResponseEntity.ok(actores);
     }
+
 }
