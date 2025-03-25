@@ -17,7 +17,7 @@ public interface VistaTipoJsonRepository extends JpaRepository<ContenidoModel, L
 
 
     @Query(value = "SELECT *, CONCAT('http://127.0.0.1:3005/public', poster) AS poster FROM vista_tipo_json", nativeQuery = true)
-    List<CategoriaModel> obtenerCatalogo();
+    List<ContenidoModel> obtenerCatalogo();
 
     @Query(value = "SELECT *, CONCAT('http://127.0.0.1:3005/public', poster) AS poster FROM vista_tipo_json", nativeQuery = true)
     List<ContenidoModel> buscarPorId(@Param("id") Long id);
