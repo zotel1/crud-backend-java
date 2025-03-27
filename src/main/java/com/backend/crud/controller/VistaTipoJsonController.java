@@ -1,5 +1,6 @@
 package com.backend.crud.controller;
 
+import com.backend.crud.model.CategoriaModel;
 import com.backend.crud.model.ContenidoModel;
 import com.backend.crud.service.VistaTipoJsonService;
 import org.springframework.http.ResponseEntity;
@@ -26,5 +27,11 @@ public class VistaTipoJsonController {
             return ResponseEntity.status(400).body("No hay categorías disponibles.");
         }
         return ResponseEntity.ok(categorias);
+    }
+
+    @GetMapping
+    public ResponseEntity<?> obtenerCatalogo() {
+        List<ContenidoModel> catalogo = vistaTipoJsonService.obtenerCatalogo();
+        return ResponseEntity.ok(catalogo);
     }
 }
