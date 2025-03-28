@@ -56,5 +56,12 @@ public class VistaTipoJsonController {
         return ResponseEntity.ok(resultado);
     }
 
-
+    @GetMapping("/categoria/{categoria}")
+    public ResponseEntity<?> buscarPorCategoria(@PathVariable String categoria) {
+        List<ContenidoModel> resultado = vistaTipoJsonService.buscarPorCategoria(categoria);
+        if (resultado.isEmpty()) {
+            return ResponseEntity.status(404).body("No se encontraron resultados para esta categoría.");
+        }
+        return ResponseEntity.ok(resultado);
+    }
 }
