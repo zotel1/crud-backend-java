@@ -23,7 +23,7 @@ public class VistaTipoJsonController {
 
     @GetMapping("/categoria")
     public ResponseEntity<?> obtenerCategoria() {
-        List<ContenidoModel> categorias = vistaTipoJsonService.obtenerCategorias();
+        List<CategoriaModel> categorias = vistaTipoJsonService.obtenerCategorias();
         if (categorias.isEmpty()) {
             return ResponseEntity.status(400).body("No hay categorías disponibles.");
         }
@@ -48,7 +48,7 @@ public class VistaTipoJsonController {
 
     @GetMapping("/genero/{genero}")
     public ResponseEntity<?> buscarPorGenero(@PathVariable String genero) {
-        List<ContenidoModel> resultado = vistaTipoJsonService.buscarPorId(genero);
+        List<ContenidoModel> resultado = vistaTipoJsonService.buscarPorGenero(genero);
         if (resultado.isEmpty()) {
             return ResponseEntity.status(404).body("No se encontraron resultados para este género.");
         }
@@ -58,7 +58,7 @@ public class VistaTipoJsonController {
 
     @GetMapping("/categoria/{categoria}")
     public ResponseEntity<?> buscarPorCategoria(@PathVariable String categoria) {
-        List<ContenidoModel> resultado = vistaTipoJsonService.buscarPorCategoria(categoria);
+        List<CategoriaModel> resultado = vistaTipoJsonService.buscarPorCategoria(categoria);
         if (resultado.isEmpty()) {
             return ResponseEntity.status(404).body("No se encontraron resultados para esta categoría.");
         }

@@ -13,7 +13,7 @@ import java.util.List;
 public interface VistaTipoJsonRepository extends JpaRepository<ContenidoModel, Long> {
 
     @Query(value = "SELECT * FROM vista_tipo_json ORDER BY id_categoria", nativeQuery = true)
-    List<ContenidoModel> obtenerCategorias();
+    List<CategoriaModel> obtenerCategorias();
 
 
     @Query(value = "SELECT *, CONCAT('http://127.0.0.1:3005/public', poster) AS poster FROM vista_tipo_json", nativeQuery = true)
@@ -32,6 +32,6 @@ SELECT *, CONCAT('http://127.0.0.1:3005/public', poster) AS poster
 FROM vista_tipo_json
 WHERE categoria IN (SELECT categoria_nombre FROM Categorias WHERE categoria_nombre = :categoria)
 """, nativeQuery = true)
-    List<ContenidoModel> buscarPorCategoria(@Param("categoria") String categoria);
+    List<CategoriaModel> buscarPorCategoria(@Param("categoria") String categoria);
 
 }

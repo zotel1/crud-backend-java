@@ -1,5 +1,6 @@
 package com.backend.crud.service;
 
+import com.backend.crud.model.CategoriaModel;
 import com.backend.crud.model.ContenidoModel;
 import com.backend.crud.repository.VistaTipoJsonRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class VistaTipoJsonService {
         this.vistaTipoJsonRepository = vistaTipoJsonRepository;
     }
 
-    public List<ContenidoModel> obtenerCategorias() {
+    public List<CategoriaModel> obtenerCategorias() {
         return vistaTipoJsonRepository.obtenerCategorias();
     }
 
@@ -30,7 +31,7 @@ public class VistaTipoJsonService {
         return vistaTipoJsonRepository.buscarPorGenero(genero);
     }
 
-    public List<ContenidoModel> buscarPorCategoria(String categoria) {
+    public List<CategoriaModel> buscarPorCategoria(String categoria) {
         return vistaTipoJsonRepository.buscarPorCategoria(categoria);
     }
 }
